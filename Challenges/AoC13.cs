@@ -38,22 +38,56 @@ namespace Challenges
             var index = 0;
             var data = input[1].Split(",").Select(x => (x, index++)).Where(x => !string.Equals(x.x, "x")).Select(x => (int.Parse(x.x), x.Item2)).ToList();
             var high = data.Last();
-            var res = GetMultiples(high.Item1).First(x => Valid(x, (high.Item1, high.Item2), data));
+            long res = data[0].Item1;
+            foreach (var e in data.Skip(1))
+            {
+                res = SuperLCM(res, e.Item1, e.Item2);
+            }
+            
             
             return res+"";
         }
 
-        private bool Valid(long t, (int val, int off) high, List<(int val, int off)> data)
+        private long SuperLCM(long x, long y, int offset)
         {
-            foreach (var v in data)
+            var p = CombinePhasesRotation(x, 0, y, -offset % y);
+            return -p.phase % p.peroid;
+        }
+
+        private (long peroid, long phase) CombinePhasesRotation(long x_per, long x_phase, long y_per, long y_phase)
+        {
+            var eGcd = EGCD(x_per, y_per);
+            var pDiff = x_phase - y_phase;
+            var mod = pDiff % eGcd.gcd;
+            var div = pDiff / eGcd.gcd;
+
+            var comPer = x_per / eGcd.gcd * y_per;
+            var comPh = (x_phase - eGcd.s * div * x_per) % comPer;
+            return (comPer, comPh);
+        }
+
+        private (long gcd, long s, long t) EGCD(long a, long b)
+        {
+            var old_r = a;
+            var r = b;
+            var old_s = 1L;
+            var s = 0L;
+            var old_t = 0L;
+            var t = 1L;
+            while (r > 0)
             {
-                if (v.val == high.val)
-                    continue;
-                if (((t-(high.off-v.off)) % v.val) != 0)
-                    return false;
+                var quot = a / b;
+                old_r = r;
+                r = a % b;
+                var tmp = old_s;
+                old_s = s;
+                s = tmp - quot * s;
+                tmp = old_t;
+                old_t = t;
+                t = tmp - quot * t;
             }
 
-            return true;
+            return (old_r, old_s, old_t);
         }
     }
 }
