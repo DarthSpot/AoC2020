@@ -28,6 +28,8 @@ namespace Challenges
                 new AoC9(),
                 new AoC10(),
                 new AoC11(),
+                new AoC12(),
+                new AoC13(),
                 //new AoC12(),
                 //new AoC13(),
                 //new AoC14(),
