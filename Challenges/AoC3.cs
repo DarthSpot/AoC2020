@@ -10,7 +10,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInputArr();
             var width = input[0].Length;
@@ -27,7 +27,7 @@ namespace Challenges
             return "" + trees;
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInputArr();
             var width = input[0].Length;

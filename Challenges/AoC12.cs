@@ -10,7 +10,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             (int x, int y)[] dir = new[] { (1, 0), (0, -1), (-1, 0), (0, 1) };
             var h = new Dictionary<char, int>() { { 'N', 3 }, { 'E', 0 }, { 'S', 1 }, { 'W', 2 } };
@@ -43,7 +43,7 @@ namespace Challenges
             return (Math.Abs(p.x) + Math.Abs(p.y))+"";
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             (int x, int y)[] dir = new[] { (1, 0), (0, -1), (-1, 0), (0, 1) };
             var h = new Dictionary<char, int>() { { 'N', 3 }, { 'E', 0 }, { 'S', 1 }, { 'W', 2 } };

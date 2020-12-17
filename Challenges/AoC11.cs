@@ -10,7 +10,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var map = ToMap(GetInputArr());
             var maxY = map.Keys.Max(x => x.y);
@@ -108,7 +108,7 @@ namespace Challenges
             }
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var map = ToMap(GetInputArr());
             var maxY = map.Keys.Max(x => x.y);

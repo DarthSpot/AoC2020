@@ -11,7 +11,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var regex = new Regex("([a-z]+):([^\\s]+)");
             var input = GetInput().Split("\n\n")
@@ -22,7 +22,7 @@ namespace Challenges
             return input.Count(pp => fields.All(k => pp.Any(f => f.Item1 == k)))+"";
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var regex = new Regex("([a-z]+):([^\\s]+)");
             var input = GetInput().Split("\n\n")

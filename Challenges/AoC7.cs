@@ -11,7 +11,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInput();
             var regex = new Regex("(?<root>[a-z ]+) bags contain ((\\s?(?<cnt>\\d+) (?<col>[a-z ]+) bags?[,\\. ]?)+|(no other bags))");
@@ -27,7 +27,7 @@ namespace Challenges
                     result += 1;
             }
 
-            return result+"";
+            return result;
         }
 
         private bool CanContain(Dictionary<string, List<(int count, string color)>> map, string leaf, string search)
@@ -40,7 +40,7 @@ namespace Challenges
         }
 
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInput();
             var regex = new Regex("(?<root>[a-z ]+) bags contain ((\\s?(?<cnt>\\d+) (?<col>[a-z ]+) bags?[,\\. ]?)+|(no other bags))");
@@ -50,7 +50,7 @@ namespace Challenges
                     x => x.Groups["cnt"].Captures
                         .Zip(x.Groups["col"].Captures, (a, b) => (int.Parse(a.Value), b.Value)).ToList());
 
-            return CountDeep(map, "shiny gold")+"";
+            return CountDeep(map, "shiny gold");
         }
 
         private int CountDeep(Dictionary<string, List<(int count, string color)>> map, string leaf)

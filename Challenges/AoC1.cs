@@ -12,7 +12,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var values = GetInputArr().Select(int.Parse).ToList();
             var (a, b) = CrossLists(values).First(x => x.Item1 + x.Item2 == 2020);
@@ -30,7 +30,7 @@ namespace Challenges
             }
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var values = GetInputArr().Select(int.Parse).ToList();
             var (a, b, c) = CrossLists3(values).First(x => x.a + x.b + x.c == 2020);

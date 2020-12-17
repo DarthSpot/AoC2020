@@ -11,7 +11,7 @@ namespace Challenges
 
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInputArr();
 
@@ -47,7 +47,7 @@ namespace Challenges
         }
 
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInputArr();
             var i = 0;

@@ -14,10 +14,10 @@ namespace AoCRunner
 
             var sw = new Stopwatch();
             sw.Start();
-            Console.WriteLine(t[task].CalculateSimple());
+            Console.WriteLine(t[task].CalculateSimple().ToString());
             Console.WriteLine(sw.Elapsed);
             sw.Restart();
-            Console.WriteLine(t[task].CalculateExtended());
+            Console.WriteLine(t[task].CalculateExtended().ToString());
             Console.WriteLine(sw.Elapsed);
             sw.Stop();
 

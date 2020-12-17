@@ -9,7 +9,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInputArr().Select(x =>
                 (GetPosition(127, 0, x.ToCharArray(0, 7)), 
@@ -31,7 +31,7 @@ namespace Challenges
                 return GetPosition(max, m, dir.Skip(1).ToArray());
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var seats = GetInputArr().Select(x =>
             {

@@ -10,7 +10,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInputArr().Select(int.Parse).ToArray();
             var max = input.Max();
@@ -28,7 +28,7 @@ namespace Challenges
             return (cnt[1] * cnt[3]).ToString();
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInputArr().Select(int.Parse).ToArray();
             return GetWays(new Dictionary<int, long> { { 0, 1 } }, input.Prepend(0).Append(input.Max() + 3).ToList(), input.Max() + 3)+"";

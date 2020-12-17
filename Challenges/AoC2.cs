@@ -10,7 +10,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInputArr();
             var regex = new Regex("(\\d+)-(\\d+)\\s([a-z]):\\s([a-z]+)");
@@ -22,7 +22,7 @@ namespace Challenges
             });
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInputArr();
             var regex = new Regex("(\\d+)-(\\d+)\\s([a-z]):\\s([a-z]+)");

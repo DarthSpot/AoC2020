@@ -11,7 +11,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInputArr().Select(long.Parse).ToArray();
             var pos = 0;
@@ -39,10 +39,10 @@ namespace Challenges
             }
         }
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInputArr().Select(long.Parse).ToArray();
-            var res = long.Parse(CalculateSimple());
+            var res = long.Parse(CalculateSimple().ToString());
 
             for (var i = 0; i < input.Length; i++)
             {

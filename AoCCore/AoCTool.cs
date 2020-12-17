@@ -14,12 +14,12 @@ namespace AoCCore
 
         public int Num { get; }
 
-        public virtual string CalculateSimple()
+        public virtual object CalculateSimple()
         {
             return "";
         }
 
-        public virtual string CalculateExtended()
+        public virtual object CalculateExtended()
         {
             return "";
         }

@@ -9,7 +9,7 @@ namespace Challenges
         {
         }
 
-        public override string CalculateSimple()
+        public override object CalculateSimple()
         {
             var input = GetInput();
             var groups = input.Split("\n\n");
@@ -18,7 +18,7 @@ namespace Challenges
         }
 
 
-        public override string CalculateExtended()
+        public override object CalculateExtended()
         {
             var input = GetInput().Trim();
             var groups = input.Split("\n\n");
